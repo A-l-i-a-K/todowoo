@@ -1,0 +1,19 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<h1> Current </h1>
+
+
+<ul>
+    {% for todo in todos %}
+    <li>{% if todo.imported %} <b> {% endif %}
+        {{ todo.title }}
+        {% if todo.imported %} </b> {% endif %}
+        {% if todo.memo %} -{{ todo.memo }} {% endif %}
+    </li>
+    {% endfor %}
+
+</ul>
+
+
+{% endblock %}
